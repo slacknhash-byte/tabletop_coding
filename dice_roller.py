@@ -36,14 +36,14 @@ def roll_three():
 # ways to roll up a character 'methods'. I've named them 'SGMs' in order to reduce
 # confusion with the programming term 'method'.
 
-def sgm_i():
+def edition_1_sgm_i():
     """ Created 12/07/2026
     All scores are recorded and arranged in the order the player desires. 4d6
     are rolled, and the lowest die (or one of the lower) is discarded. """
     num_stats = 6
     return [roll_four_drop_lowest() for _ in range(num_stats)]
 
-def sgm_ii():
+def edition_1_sgm_ii():
     """ Created 12/07/2026
     All scores are recorded and arranged as in Method I. 3d6 are rolled 12 times
     and the highest 6 scores are retained. """
@@ -53,7 +53,7 @@ def sgm_ii():
     results.sort()
     return results[-highest_set:]
 
-def sgm_iii(hero):
+def edition_1_sgm_iii(hero):
     """ Created 12/07/2026
     Scores rolled are according to each ability category, in order,
     Strength, Intelligence, Wisdom, Dexterity, Constitution, Charisma.
@@ -74,7 +74,7 @@ def sgm_iii(hero):
         ]
     }
     
-def sgm_iv():
+def edition_1_sgm_iv():
     """ Created 12/07/2026
     3d6 are rolled sufficient times to generate the 6 ability scores, in order,
     for 12 characters. The player then selects the single set of scores which he or she
@@ -247,15 +247,15 @@ def generation_method_menu(hero):
         menu_choice=int(input("\nHow do you want to generate your character? "))
         match menu_choice:
             case 1:
-                stat_list = sgm_i()
+                stat_list = edition_1_sgm_i()
                 assign_rolled_stats(hero,stat_list)
                 break
             case 2:
-                stat_list = sgm_ii()
+                stat_list = edition_1_sgm_ii()
                 assign_rolled_stats(hero,stat_list)
                 break
             case 3:
-                sgm_iii(hero)
+                edition_1_sgm_iii(hero)
                 break
             case 4:
                 print("That method hasn't been implemented yet.")
