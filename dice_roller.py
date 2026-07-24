@@ -1,5 +1,9 @@
 import random
 from character import Character
+from constants import ABILITY_NAMES
+from constants import INPUT_TRANSLATION_MAP
+from constants import ABBREVIATION_MAP
+from constants import ABILITY_NAMES
 
 def die(num_sides):
     """ Created 12/07/2026
@@ -64,14 +68,7 @@ def edition_1_sgm_iii(hero):
 
     hero.ability_scores = {
         ability: max(roll_three() for _ in range(batch_size))
-        for ability in [
-            "Strength",
-            "Intelligence",
-            "Wisdom",
-            "Dexterity",
-            "Constitution",
-            "Charisma"
-        ]
+            for ability in ABILITY_NAMES
     }
     
 def edition_1_sgm_iv():
@@ -80,15 +77,55 @@ def edition_1_sgm_iv():
     for 12 characters. The player then selects the single set of scores which he or she
     finds most desirable and these scores are noted on the character record sheet. """
 
-    ability_order = ["Str","Int","Wis","Dex","Con","Cha"]
+    ability_order = ABILITY_NAMES
     batch_size = 12
     # Outer list comprehension generates 12 items: twelve 'characters'.
-    # Inner dictionary comprehension rolls 2d6 for each ability in order
+    # Inner dictionary comprehension rolls 3d6 for each ability in order
     
     return [{ability: roll_three() for ability in ability_order} for _ in range(batch_size)]
 
 ###
+# Functions to assist with character generation method IV
+def output_stat_sets(stat_list):
+    """ Created 24/07/2026
+    Outputs the contents of stat_list, which is a two-dimensional list.
+    In pretty much every case, stat_list consists of multiple sets of stats
+    (typically twelve sets of character ability scores as per method I in
+    the 1st Edition AD&D Dungeon Masters Guide).
+    """
+    print("The following ability scores have been generated:\n")
+    for number, stat_set in enumerate(stat_list, start=1):
+        line = ", ".join(
+            f"{ability} {score:2}"
+            for ability, score in stat_set.items()
+        )
+        print(f"{number:2}. {line}")
 
+def select_stat_set(set_size):
+    """ Created 24/07/2026
+    Prompts the user to pick a number between 1 and set_size, and rejects
+    all other inputs.
+    """
+    while True:
+        try:
+            choice = int(input(f"Pick a number between 1 and {set_size}: "))
+            if choice in range(1,set_size+1):
+                return choice
+            else:
+                print(f"Please pick a number between 1 and {set_size}.")
+        except ValueError:
+            print(f"That is not a number. Please pick a number between 1 and {set_size}.")
+
+def assign_stat_set(hero, choice, stat_list):
+    """ Created 24/07/2026
+    This function takes choice, subtracts 1 in otder to get the array index corresponding
+    to the user's choice, and applies the contents of stat_list[choice] to the hero object.
+    """
+    index = choice - 1
+    hero.ability_scores = stat_list[index]
+    
+###
+    
 def output_horizontal_rule():
     """ Created 14/07/2026
     Outputs a simple horizontal ruling line to break text up.
@@ -139,21 +176,7 @@ def get_valid_score_index(stat_list, assigned_list) -> int:
 
 def get_valid_ability(local_scores, unassigned_stats) -> str:
     """ Created 13/07/2026
-    Prompts for an ability name, normalises variations, and validates choices."""
-    
-    # -------------------------------------------------------------------------
-    # EXPLICIT INPUT CONFIGURATION MAP
-    # -------------------------------------------------------------------------
-    # Maps user-typed shorthand variations directly to the official dictionary keys.
-    # All keys are forced to lowercase here to ensure case-insensitive lookups.
-    input_translation_map = {
-        "str": "Strength", "strength": "Strength",
-        "int": "Intelligence", "intel": "Intelligence", "intelligence": "Intelligence",
-        "wis": "Wisdom", "wisdom": "Wisdom",
-        "dex": "Dexterity", "dexterity": "Dexterity",
-        "con": "Constitution", "constitution": "Constitution",
-        "cha": "Charisma", "char": "Charisma", "charisma": "Charisma"
-    }
+    Prompts for an ability name, normalises variations, and validates choices."""   
 
     while True:
         print("\nAvailable Abilities:")
@@ -163,13 +186,13 @@ def get_valid_ability(local_scores, unassigned_stats) -> str:
         user_input = input("Type the target ability name or shortcut: ").strip().lower()
         
         # Check if the text matches any known translation entry
-        if user_input not in input_translation_map:
+        if user_input not in INPUT_TRANSLATION_MAP:
             print(f"Error: '{user_input}' is not a recognised ability shortcut.")
             print(f"Please type something like: str, dex, con, or the full names.")
             continue
             
         # Extract the official name from our map
-        resolved_ability_name = input_translation_map[user_input]
+        resolved_ability_name = INPUT_TRANSLATION_MAP[user_input]
         
         # Now perform validation checks using the clean, explicit full name
         if resolved_ability_name not in unassigned_stats:
@@ -258,7 +281,10 @@ def generation_method_menu(hero):
                 edition_1_sgm_iii(hero)
                 break
             case 4:
-                print("That method hasn't been implemented yet.")
+                rolled_stats = edition_1_sgm_iv()
+                output_stat_sets(rolled_stats)
+                chosen_set = select_stat_set(len(rolled_stats))
+                assign_stat_set(hero, chosen_set, rolled_stats)
                 break
             case _:
                 print("Please pick an option between 1 and 4.")
