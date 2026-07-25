@@ -4,6 +4,11 @@ from constants import ABILITY_NAMES
 from constants import INPUT_TRANSLATION_MAP
 from constants import ABBREVIATION_MAP
 from constants import ABILITY_NAMES
+from constants import ABILITY_SHORT_NAMES
+from constants import FIRST_EDITION_RACE_PREREQS
+
+###
+# Dice-rolling functions
 
 def die(num_sides):
     """ Created 12/07/2026
@@ -96,7 +101,7 @@ def output_stat_sets(stat_list):
     print("The following ability scores have been generated:\n")
     for number, stat_set in enumerate(stat_list, start=1):
         line = ", ".join(
-            f"{ability} {score:2}"
+            f"{ABILITY_SHORT_NAMES[ability].capitalize()} {score:2}"
             for ability, score in stat_set.items()
         )
         print(f"{number:2}. {line}")
@@ -132,6 +137,9 @@ def output_horizontal_rule():
     """
     print("\n========================================")
 
+###
+# Functions concerning the assignment of stats
+
 def display_assignment_menu(local_scores, stat_list, assigned_list, unassigned_stats):
     """ Created 13/07/2026
     Modified 14/07/2026
@@ -139,7 +147,7 @@ def display_assignment_menu(local_scores, stat_list, assigned_list, unassigned_s
     output_horizontal_rule()
     print("--- CURRENT CHARACTER SHEET ---")
     for stat, value in local_scores.items():
-        print(f"  {stat}: {value}")
+        print(f"  {stat.capitalize()}: {value}")
         
     print("\n--- AVAILABLE ROLLS ---")
     available_rolls = [
@@ -180,7 +188,7 @@ def get_valid_ability(local_scores, unassigned_stats) -> str:
 
     while True:
         print("\nAvailable Abilities:")
-        print("  " + ", ".join(unassigned_stats))
+        print("  " + ", ".join([stat_name.capitalize() for stat_name in unassigned_stats]))
         
         # Capture user typing, strip leading/trailing whitespace, and make lowercase
         user_input = input("Type the target ability name or shortcut: ").strip().lower()
@@ -196,7 +204,7 @@ def get_valid_ability(local_scores, unassigned_stats) -> str:
         
         # Now perform validation checks using the clean, explicit full name
         if resolved_ability_name not in unassigned_stats:
-            print(f"Error: {resolved_ability_name} already has a score assigned!")
+            print(f"Error: {resolved_ability_name.capitalize()} already has a score assigned!")
             print(f"Remaining choices left: {', '.join(unassigned_stats)}")
             continue
             
@@ -230,11 +238,14 @@ def assign_rolled_stats(character_object, stat_list):
         assigned_list[target_index] = 1
         unassigned_stats.remove(ability_choice)
         
-        print(f"\n-> Success! Locally staged {stat_list[target_index]} to {ability_choice}.")
+        print(f"\n-> Success! Locally staged {stat_list[target_index]} to {ability_choice.capitalize()}.")
 
     # 3. Final Commit Transaction
     character_object.ability_scores = local_scores
     print("\nCharacter Generation Complete! Changes saved to character record.")
+
+###
+# Functions concerning display
 
 def display_character_sheet(hero):
     """ Created 14/07/2026
@@ -244,7 +255,7 @@ def display_character_sheet(hero):
     output_horizontal_rule()
     print(f"{hero.name}")
     for stat, value in hero.ability_scores.items():
-        print(f"  {stat}: {value}")
+        print(f"  {stat.capitalize()}: {value}")
     output_horizontal_rule()
 
 def output_menu_options():
@@ -259,7 +270,9 @@ def output_menu_options():
     print("\t3: Roll 3d6 six times each for Strength, Intelligence, Wisdom, Dexterity, Constitution, and Charisma in that order. Pick the highest score for each ability score.")
     print("\t4: Roll 3d6 in order for Strength, Intelligence, Wisdom, Dexterity, Constitution, and Charisma. Repeat twelve times and pick one set.")
     output_horizontal_rule()
-    
+
+###
+#
 
 def generation_method_menu(hero):
     """ Created 13/07/2026
