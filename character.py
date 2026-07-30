@@ -6,6 +6,8 @@ class Character:
     """ 
     Created 12/07/2026
     Last modified 25/07/2026
+    28/07/2026: Added ignore_1e_gender_rule
+    
     The 'Character' class stores all the relevant data about the character:
     name, ability scores, etc. 
     All character attribute names are stored in lower case: any formatting will occur
@@ -24,11 +26,14 @@ class Character:
         "constitution": "Unassigned", 
         "charisma": "Unassigned"
     })
+    ignore_1e_gender_rule = None
     biography: dict = field(default_factory=lambda: {
         "height": 0,
         "weight": 0,
         "age": 0,
         "gender": "Unassigned",
+        "sex": "Unassigned",
         "hair": "Unassigned",
         "eyes": "Unassigned"
+        
     })
