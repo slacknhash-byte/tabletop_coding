@@ -1,5 +1,5 @@
 from character import Character
-from constants import FIRST_EDITION_RACE_PREREQS
+from constants import FIRST_EDITION_RACES
 from stat_generation_methods import generation_method_menu
 from race import check_prerequisites
 from display import display_character_sheet

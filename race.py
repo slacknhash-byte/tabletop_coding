@@ -1,4 +1,4 @@
-from constants import FIRST_EDITION_RACE_PREREQS
+from constants import FIRST_EDITION_RACES
 from constants import FIRST_EDITION_RACE_LIST
 
 ###
@@ -6,28 +6,32 @@ from constants import FIRST_EDITION_RACE_LIST
 # Created 25/07/2026
 
 def check_prerequisites(hero, sex, race):
-    """ Created 25/07/2026
+    """ 
+    Created 25/07/2026
+    Modified 02/08/2026 to refer to FIRST_EDITION_RACES and clean up conditionals
     This function iterates through the ability scores set on the player
     character object and runs compare_stat on them.
     """
     
     for stat, value in hero.ability_scores.items():
-        if value >= FIRST_EDITION_RACE_PREREQS[sex][race][stat]["minimum"] and value <= value >= FIRST_EDITION_RACE_PREREQS[sex][race][stat]["minimum"]:
-            return True
-        else:
+        limits = FIRST_EDITION_RACES[race]["ability_limits"][sex][stat]
+        if not (limits["minimum"] <= value <= limits["maximum"]):
             return False
+    return True
 
 def build_1e_race_list(hero):
-    """ Created 30/07/2026
+    """ 
+    Created 30/07/2026
+    Modified 02/08/2026. Cleaned up conditionals
     This function runs check_prerequisites() on each of the players
     character races. If the character qualifies (check_prerequisites returns
     True) then the name of that race is added to the list of races for
     which they qualify. The function returns that list.
     """
     race_list = []
-    sex = "female" if hero.biography["sex"] == "female" and hero.ignore_1e_gender_rule == False else "male"
+    sex = "female" if (hero.biography["sex"] == "female" and not hero.ignore_1e_gender_rule)  else "male"
     for race_name in FIRST_EDITION_RACE_LIST:
-        if check_prerequisites(hero, sex, race_name) == True:
+        if check_prerequisites(hero, sex, race_name):
             race_list.append(race_name)
     return race_list   
 

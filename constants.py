@@ -61,379 +61,6 @@ ABILITY_SHORT_NAMES = {
     "charisma": "cha",
 }
 
-# Created 25/07/2026
-# Modified 30/07/2026 - added humans
-FIRST_EDITION_RACE_PREREQS = {
-     "male": {
-        "dwarf": {
-            "strength": {
-                "minimum": 8,
-                "maximum": 18
-            },
-            "intelligence": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "wisdom": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "dexterity": {
-                "minimum": 3,
-                "maximum": 17
-            },
-            "constitution": {               
-                "minimum": 12,
-                "maximum": 19
-            },
-            "charisma": {
-                "minimum": 3,
-                "maximum": 16
-            }
-        },
-        "elf": {
-            "strength": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "intelligence": {
-                "minimum": 8,
-                "maximum": 18
-            },
-            "wisdom": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "dexterity": {
-                "minimum": 7,
-                "maximum": 19
-            },
-            "constitution": {               
-                "minimum": 6,
-                "maximum": 18
-            },
-            "charisma": {
-                "minimum": 8,
-                "maximum": 18
-            }
-        },
-        "gnome": {
-            "strength": {
-                "minimum": 6,
-                "maximum": 18
-            },
-            "intelligence": {
-                "minimum": 7,
-                "maximum": 18
-            },
-            "wisdom": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "dexterity": {
-                "minimum": 3,
-                "maximum": 17
-            },
-            "constitution": {               
-                "minimum": 8,
-                "maximum": 19
-            },
-            "charisma": {
-                "minimum": 3,
-                "maximum": 18
-            }
-        },
-        "half-elf": {
-            "strength": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "intelligence": {
-                "minimum": 4,
-                "maximum": 18
-            },
-            "wisdom": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "dexterity": {
-                "minimum": 3,
-                "maximum": 17
-            },
-            "constitution": {               
-                "minimum": 6,
-                "maximum": 18
-            },
-            "charisma": {
-                "minimum": 3,
-                "maximum": 18
-            }
-        },        
-        "halfling": {
-            "strength": {
-                "minimum": 6,
-                "maximum": 17
-            },
-            "intelligence": {
-                "minimum": 6,
-                "maximum": 18
-            },
-            "wisdom": {
-                "minimum": 3,
-                "maximum": 17
-            },
-            "dexterity": {
-                "minimum": 8,
-                "maximum": 18
-            },
-            "constitution": {               
-                "minimum": 10,
-                "maximum": 19
-            },
-            "charisma": {
-                "minimum": 3,
-                "maximum": 18
-            }
-        },
-        "half-orc": {
-            "strength": {
-                "minimum": 6,
-                "maximum": 18
-            },
-            "intelligence": {
-                "minimum": 3,
-                "maximum": 17
-            },
-            "wisdom": {
-                "minimum": 3,
-                "maximum": 14
-            },
-            "dexterity": {
-                "minimum": 3,
-                "maximum": 17
-            },
-            "constitution": {               
-                "minimum": 13,
-                "maximum": 19
-            },
-            "charisma": {
-                "minimum": 3,
-                "maximum": 12
-            }
-        },
-        "human": {
-            "strength": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "intelligence": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "wisdom": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "dexterity": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "constitution": {               
-                "minimum": 13,
-                "maximum": 18
-            },
-            "charisma": {
-                "minimum": 3,
-                "maximum": 18
-            }
-        } 
-    },
-    "female": {
-        "dwarf": {
-            "strength": {
-                "minimum": 8,
-                "maximum": 17
-            },
-            "intelligence": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "wisdom": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "dexterity": {
-                "minimum": 3,
-                "maximum": 17
-            },
-            "constitution": {               
-                "minimum": 12,
-                "maximum": 19
-            },
-            "charisma": {
-                "minimum": 3,
-                "maximum": 16
-            }
-        },
-        "elf": {
-            "strength": {
-                "minimum": 3,
-                "maximum": 16
-            },
-            "intelligence": {
-                "minimum": 8,
-                "maximum": 18
-            },
-            "wisdom": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "dexterity": {
-                "minimum": 7,
-                "maximum": 19
-            },
-            "constitution": {               
-                "minimum": 6,
-                "maximum": 18
-            },
-            "charisma": {
-                "minimum": 8,
-                "maximum": 18
-            }
-        },
-        "gnome": {
-            "strength": {
-                "minimum": 6,
-                "maximum": 15
-            },
-            "intelligence": {
-                "minimum": 7,
-                "maximum": 18
-            },
-            "wisdom": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "dexterity": {
-                "minimum": 3,
-                "maximum": 17
-            },
-            "constitution": {               
-                "minimum": 8,
-                "maximum": 19
-            },
-            "charisma": {
-                "minimum": 3,
-                "maximum": 18
-            }
-        },
-        "half-elf": {
-            "strength": {
-                "minimum": 3,
-                "maximum": 17
-            },
-            "intelligence": {
-                "minimum": 4,
-                "maximum": 18
-            },
-            "wisdom": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "dexterity": {
-                "minimum": 3,
-                "maximum": 17
-            },
-            "constitution": {               
-                "minimum": 6,
-                "maximum": 18
-            },
-            "charisma": {
-                "minimum": 3,
-                "maximum": 18
-            }
-        },        
-        "halfling": {
-            "strength": {
-                "minimum": 6,
-                "maximum": 14
-            },
-            "intelligence": {
-                "minimum": 6,
-                "maximum": 18
-            },
-            "wisdom": {
-                "minimum": 3,
-                "maximum": 17
-            },
-            "dexterity": {
-                "minimum": 8,
-                "maximum": 18
-            },
-            "constitution": {               
-                "minimum": 10,
-                "maximum": 19
-            },
-            "charisma": {
-                "minimum": 3,
-                "maximum": 18
-            }
-        },
-        "half-orc": {
-            "strength": {
-                "minimum": 6,
-                "maximum": 18
-            },
-            "intelligence": {
-                "minimum": 3,
-                "maximum": 17
-            },
-            "wisdom": {
-                "minimum": 3,
-                "maximum": 14
-            },
-            "dexterity": {
-                "minimum": 3,
-                "maximum": 17
-            },
-            "constitution": {               
-                "minimum": 13,
-                "maximum": 19
-            },
-            "charisma": {
-                "minimum": 3,
-                "maximum": 12
-            }
-        },
-        "human": {
-            "strength": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "intelligence": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "wisdom": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "dexterity": {
-                "minimum": 3,
-                "maximum": 18
-            },
-            "constitution": {               
-                "minimum": 13,
-                "maximum": 18
-            },
-            "charisma": {
-                "minimum": 3,
-                "maximum": 18
-            }
-        }        
-    }
-}
-
 # Created 26/07/2026
 # Modified 27/07/2026
 FIRST_EDITION_CLASS_PREREQS = {
@@ -878,3 +505,609 @@ AFFIRMATIVES = (
 NEGATIVES = (
     "n","N","no","NO","No"
     )
+
+"""
+Created 31/07/2026
+Wondered if a module that contains everything for each race might work better.
+"""
+FIRST_EDITION_RACES = {
+    "dwarf": {
+        "ability_limits": {
+            "male": {                    
+                "strength": {
+                    "minimum": 8,
+                    "maximum": 18
+                },
+                "intelligence": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "wisdom": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "dexterity": {
+                    "minimum": 3,
+                    "maximum": 17
+                },
+                "constitution": {               
+                    "minimum": 12,
+                    "maximum": 19
+                },
+                "charisma": {
+                    "minimum": 3,
+                    "maximum": 16
+                }
+            },
+            "female": {
+                "strength": {
+                    "minimum": 8,
+                    "maximum": 17
+                },
+                "intelligence": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "wisdom": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "dexterity": {
+                    "minimum": 3,
+                    "maximum": 17
+                },
+                "constitution": {               
+                    "minimum": 12,
+                    "maximum": 19
+                },
+                "charisma": {
+                    "minimum": 3,
+                    "maximum": 16
+                }                
+            }
+        },
+        "ability_modifiers": {
+            "constitution": 1,
+            "charisma": -1
+        },
+        "movement": 6,
+        "infravision": 60,
+        "languages": [
+            "common",
+            "dwarf",
+            "gnome",
+            "goblin",
+            "kobold",
+            "orc"
+        ],
+        "allowed_classes": {
+            "pc": [
+                "fighter",
+                "thief",
+                "assassin"
+            ],
+            "npc": [
+                "cleric",
+                "fighter",
+                "thief",
+                "assassin"
+            ]
+        }
+    },
+    "elf": {
+        "ability_limits": {
+            "male": {
+                "strength": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "intelligence": {
+                    "minimum": 8,
+                    "maximum": 18
+                },
+                "wisdom": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "dexterity": {
+                    "minimum": 7,
+                    "maximum": 19
+                },
+                "constitution": {               
+                    "minimum": 6,
+                    "maximum": 18
+                },
+                "charisma": {
+                    "minimum": 8,
+                    "maximum": 18
+                }
+            },
+            "female": {
+                "strength": {
+                    "minimum": 3,
+                    "maximum": 16
+                },
+                "intelligence": {
+                    "minimum": 8,
+                    "maximum": 18
+                },
+                "wisdom": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "dexterity": {
+                    "minimum": 7,
+                    "maximum": 19
+                },
+                "constitution": {               
+                    "minimum": 6,
+                    "maximum": 18
+                },
+                "charisma": {
+                    "minimum": 8,
+                    "maximum": 18
+                }                
+            }
+        },
+        "ability_modifiers": {
+            "dexterity": 1,
+            "constitution": -1,
+        },
+        "movement": 12,
+        "infravision": 60,
+        "languages": [
+            "common",
+            "elf",
+            "gnoll",
+            "gnome",
+            "goblin",
+            "halfling",
+            "hobgoblin",
+            "orc",
+        ],
+        "allowed_classes": {
+            "pc": [
+                "fighter",
+                "magic-user",
+                "thief",
+                "assassin"
+            ],
+            "npc": [
+                "cleric",
+                "fighter",
+                "magic-user",
+                "thief",
+                "assassin"
+            ],
+        }
+    },
+    "gnome": {
+        "ability_limits": {
+            "male": {
+                "strength": {
+                    "minimum": 6,
+                    "maximum": 18
+                },
+                "intelligence": {
+                    "minimum": 7,
+                    "maximum": 18
+                },
+                "wisdom": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "dexterity": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "constitution": {               
+                    "minimum": 8,
+                    "maximum": 18
+                },
+                "charisma": {
+                    "minimum": 3,
+                    "maximum": 18
+                }
+            },
+            "female": {
+                "strength": {
+                    "minimum": 6,
+                    "maximum": 15
+                },
+                "intelligence": {
+                    "minimum": 7,
+                    "maximum": 18
+                },
+                "wisdom": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "dexterity": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "constitution": {               
+                    "minimum": 8,
+                    "maximum": 18
+                },
+                "charisma": {
+                    "minimum": 3,
+                    "maximum": 18
+                }                
+            }
+        },
+        "ability_modifiers": { },
+        "movement": 6,
+        "infravision": 60,
+        "languages": [
+            "burrowing mammals",
+            "common",
+            "dwarf",
+            "gnome",
+            "goblin",
+            "halfling",
+            "kobold"
+        ],
+        "allowed_classes": {
+            "pc": [
+                "fighter",
+                "illusionist",
+                "thief",
+                "assassin"
+            ],
+            "npc": [
+                "cleric",
+                "fighter",
+                "illusionist",
+                "thief",
+                "assassin"                
+            ]
+        }
+    },
+    "half-elf": {
+        "ability_limits": {
+            "male": {
+                "strength": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "intelligence": {
+                    "minimum": 4,
+                    "maximum": 18
+                },
+                "wisdom": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "dexterity": {
+                    "minimum": 6,
+                    "maximum": 18
+                },
+                "constitution": {               
+                    "minimum": 6,
+                    "maximum": 18
+                },
+                "charisma": {
+                    "minimum": 3,
+                    "maximum": 18
+                }
+            },
+            "female": {
+                "strength": {
+                    "minimum": 3,
+                    "maximum": 17
+                },
+                "intelligence": {
+                    "minimum": 4,
+                    "maximum": 18
+                },
+                "wisdom": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "dexterity": {
+                    "minimum": 6,
+                    "maximum": 18
+                },
+                "constitution": {               
+                    "minimum": 6,
+                    "maximum": 18
+                },
+                "charisma": {
+                    "minimum": 3,
+                    "maximum": 18
+                }                
+            }
+        },
+        "ability_modifiers": {
+        },
+        "movement": 12,
+        "infravision": 60,
+        "languages": [
+            "common",
+            "elvish",
+            "gnoll",
+            "gnome",
+            "goblin",
+            "hobgoblin",
+            "orcish",
+        ],
+        "allowed_classes": {
+            "pc": [
+                "cleric",
+                "druid",
+                "fighter",
+                "ranger",
+                "magic-user",
+                "thief",
+                "assassin"
+            ],
+            "npc": [
+                "cleric",
+                "druid",
+                "fighter",
+                "ranger",
+                "magic-user",
+                "thief",
+                "assassin"
+            ],
+        }
+    },
+    "halfling": {
+        "ability_limits": {
+            "male": {
+                "strength": {
+                    "minimum": 6,
+                    "maximum": 17
+                },
+                "intelligence": {
+                    "minimum": 6,
+                    "maximum": 18
+                },
+                "wisdom": {
+                    "minimum": 3,
+                    "maximum": 17
+                },
+                "dexterity": {
+                    "minimum": 8,
+                    "maximum": 18
+                },
+                "constitution": {               
+                    "minimum": 10,
+                    "maximum": 19
+                },
+                "charisma": {
+                    "minimum": 3,
+                    "maximum": 18
+                }
+            },
+            "female": {
+                "strength": {
+                    "minimum": 6,
+                    "maximum": 14
+                },
+                "intelligence": {
+                    "minimum": 6,
+                    "maximum": 18
+                },
+                "wisdom": {
+                    "minimum": 3,
+                    "maximum": 17
+                },
+                "dexterity": {
+                    "minimum": 8,
+                    "maximum": 18
+                },
+                "constitution": {               
+                    "minimum": 10,
+                    "maximum": 19
+                },
+                "charisma": {
+                    "minimum": 3,
+                    "maximum": 18
+                }                
+            }
+        },
+        "ability_modifiers": {
+            "strength": -1,
+            "dexterity": 1
+        },
+        "movement": 6,
+        "infravision": {
+            "subrace": {
+                "hairfoot": 0,
+                "stout": 60,
+                "tallfellow": 0
+                }
+            }
+        },
+        "languages": [
+            "common",
+            "dwarf",
+            "elf",           
+            "gnome",
+            "goblin",
+            "halfling",
+            "orc",
+        ],
+        "allowed_classes": {
+            "pc": [
+                "fighter",
+                "thief"
+            ],
+            "npc": [
+                "fighter",
+                "druid",
+                "thief"
+            ],            
+    },
+    "half-orc": {
+        "ability_limits": {
+            "male": {
+                "strength": {
+                    "minimum": 6,
+                    "maximum": 18
+                },
+                "intelligence": {
+                    "minimum": 3,
+                    "maximum": 17
+                },
+                "wisdom": {
+                    "minimum": 3,
+                    "maximum": 14
+                },
+                "dexterity": {
+                    "minimum": 3,
+                    "maximum": 17
+                },
+                "constitution": {               
+                    "minimum": 13,
+                    "maximum": 19
+                },
+                "charisma": {
+                    "minimum": 3,
+                    "maximum": 12
+                }
+            },
+            "female": {
+                "strength": {
+                    "minimum": 6,
+                    "maximum": 18
+                },
+                "intelligence": {
+                    "minimum": 3,
+                    "maximum": 17
+                },
+                "wisdom": {
+                    "minimum": 3,
+                    "maximum": 14
+                },
+                "dexterity": {
+                    "minimum": 3,
+                    "maximum": 17
+                },
+                "constitution": {               
+                    "minimum": 13,
+                    "maximum": 19
+                },
+                "charisma": {
+                    "minimum": 3,
+                    "maximum": 12
+                }                
+            }
+        },
+        "ability_modifiers": {
+            "strength": 1,
+            "constitution": 1,
+            "charisma": -2
+        },
+        "movement": 12,
+        "infravision": 60,
+        "languages": [
+            "common",
+            "orcish",
+        ],
+        "allowed_classes": {
+            "pc": [
+                "cleric",
+                "fighter",
+                "thief",
+                "assassin"
+            ],
+            "npc": [
+                "cleric",
+                "fighter",
+                "thief",
+                "assassin"
+            ]
+        }
+    },
+    "human": {
+        "ability_limits": {
+            "male": {
+                "strength": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "intelligence": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "wisdom": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "dexterity": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "constitution": {               
+                    "minimum": 13,
+                    "maximum": 18
+                },
+                "charisma": {
+                    "minimum": 3,
+                    "maximum": 18
+                }
+            },
+            "female": {
+                "strength": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "intelligence": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "wisdom": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "dexterity": {
+                    "minimum": 3,
+                    "maximum": 18
+                },
+                "constitution": {               
+                    "minimum": 13,
+                    "maximum": 18
+                },
+                "charisma": {
+                    "minimum": 3,
+                    "maximum": 18
+                }                
+            }
+        },
+        "ability_modifiers": { },
+        "movement": 12,
+        "infravision": 0,
+        "languages": [ ],
+        "allowed_classes": {
+            "pc": [
+                "cleric",
+                "druid",
+                "fighter",
+                "ranger",
+                "paladin",
+                "magic-user",
+                "illusionist",
+                "thief",
+                "assassin",
+                "monk"
+            ],
+            "npc": [
+                "cleric",
+                "druid",
+                "fighter",
+                "ranger",
+                "paladin",
+                "magic-user",
+                "illusionist",
+                "thief",
+                "assassin",
+                "monk"
+            ]
+        }
+    }    
+}
+
+
